@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Hotels in Bali - LuxStay</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #3498db;
+        text-decoration: none;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+      .nav-links li {
+        margin-left: 1.5rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Hero section styles */
+      .hero {
+        background-image: url(../images/bali-hotel.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 2rem;
+      }
+      .hero-content {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        border-radius: 5px;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Filter section styles */
+      .filters {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .filter-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+      .filter-group label {
+        margin-right: 0.5rem;
+      }
+      .filter-group select,
+      .filter-group input {
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+
+      /* Hotel list styles */
+      .hotel-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      .hotel-card {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      .hotel-card:hover {
+        transform: translateY(-5px);
+      }
+      .hotel-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .hotel-card-content {
+        padding: 1rem;
+      }
+      .hotel-card a {
+        text-decoration: none;
+      }
+      .hotel-card h3 {
+        margin-bottom: 0.5rem;
+        color: #333;
+        text-decoration: none;
+      }
+      .hotel-card-content h3:hover {
+        color: #3498db;
+      }
+      .hotel-card p:hover {
+        color: #3498db;
+      }
+      .hotel-card .rating:hover {
+        color: #3498db;
+      }
+
+      .hotel-card p {
+        color: #666;
+        margin-bottom: 1rem;
+        text-decoration: none;
+      }
+      .hotel-card .price {
+        font-weight: bold;
+        color: #3498db;
+      }
+      .hotel-card .rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      .hotel-card .rating span {
+        margin-left: 0.5rem;
+        color: #666;
+        text-decoration: none;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .filters {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .filter-group {
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="/" class="logo"><div>LuxStay</div></a>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="/about-hotels/">About</a></li>
+          <li><a href="/contacts/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Discover Bali</h1>
+          <p>
+            Ancient temples whisper stories of spirituality, and vibrant sunsets
+            paint the sky
+          </p>
+        </div>
+      </section>
+
+      <div class="container">
+        <section class="filters">
+          <div class="filter-group">
+            <label for="check-in">Check-in:</label>
+            <input type="date" id="check-in" />
+          </div>
+          <div class="filter-group">
+            <label for="check-out">Check-out:</label>
+            <input type="date" id="check-out" />
+          </div>
+          <div class="filter-group">
+            <label for="guests">Guests:</label>
+            <select id="guests">
+              <option value="1">1 Adult</option>
+              <option value="2">2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="price-range">Price Range:</label>
+            <select id="price-range">
+              <option value="all">All Prices</option>
+              <option value="budget">Budget</option>
+              <option value="mid-range">Mid-range</option>
+              <option value="luxury">Luxury</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="hotel-list">
+          <div class="hotel-card">
+            <a href="../hotel-destination-bali/">
+              <img
+                src="../images/bali beach copy.webp"
+                alt="Bali Beach Resort"
+              />
+              <div class="hotel-card-content">
+                <h3>Bali Beach Resort</h3>
+                <div class="rating">
+                  ★★★★★
+                  <span>(245 reviews)</span>
+                </div>
+                <p>Luxurious beachfront resort with stunning ocean views</p>
+                <p class="price">From $250/night</p>
+              </div>
+            </a>
+          </div>
+          <div class="hotel-card">
+            <a href="../hotel-destination-ubud/">
+              <img
+                src="../images/ubud jungle retreat - Copy.jpg"
+                alt="Ubud Jungle Retreat"
+              />
+              <div class="hotel-card-content">
+                <h3>Ubud Jungle Resort</h3>
+                <div class="rating">
+                  ★★★★☆
+                  <span>(189 reviews)</span>
+                </div>
+                <p>Serene eco-friendly retreat nestled in the heart of Ubud</p>
+                <p class="price">From $180/night</p>
+              </div>
+            </a>
+          </div>
+          <div class="hotel-card">
+            <a href="../hotel-destination-seminyak/">
+              <img
+                src="../images/Seminyak Boutique Hotel - Copy.jpg"
+                alt="Seminyak Boutique Hotel"
+              />
+              <div class="hotel-card-content">
+                <h3>Seminyak Boutique Hotel</h3>
+                <div class="rating">
+                  ★★★★☆
+                  <span>(132 reviews)</span>
+                </div>
+                <p>The chic boutique hotel in the trendy Seminyak area</p>
+                <p class="price">From $150/night</p>
+              </div>
+            </a>
+          </div>
+          <div class="hotel-card">
+            <a href="../hotel-destination-nusa/">
+              <img
+                src="../images/Nusa Dua Luxury Villas - Copy.jpg"
+                alt="Nusa Dua Luxury Villas"
+              />
+              <div class="hotel-card-content">
+                <h3>Nusa Dua Luxury Villas</h3>
+                <div class="rating">
+                  ★★★★★
+                  <span>(301 reviews)</span>
+                </div>
+                <p>Exclusive villas with private pools in upscale Nusa Dua</p>
+                <p class="price">From $350/night</p>
+              </div>
+            </a>
+          </div>
+          <div class="hotel-card">
+            <a href="../hotel-destination-canggu/">
+              <img
+                src="../images/Canggu Surfer's Inn - Copy.jpg"
+                alt="Canggu Surfer's Inn"
+              />
+              <div class="hotel-card-content">
+                <h3>Canggu Surfer's Inn</h3>
+                <div class="rating">
+                  ★★★☆☆
+                  <span>(87 reviews)</span>
+                </div>
+                <p>Laid-back inn close to Canggu's famous surf spots</p>
+                <p class="price">From $80/night</p>
+              </div>
+            </a>
+          </div>
+          <div class="hotel-card">
+            <a href="../hotel-destination-jimbaran/">
+              <img
+                src="../images/Jimbaran Bay Hotel - Copy.jpg"
+                alt="Jimbaran Bay Hotel"
+              />
+              <div class="hotel-card-content">
+                <h3>Jimbaran Bay Hotel</h3>
+                <div class="rating">
+                  ★★★★☆
+                  <span>(176 reviews)</span>
+                </div>
+                <p>Elegant hotel overlooking the beautiful Jimbaran Bay</p>
+                <p class="price">From $200/night</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 LuxStay. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

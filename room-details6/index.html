@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deluxe King Room - Grand Palace Hotel | LuxStay</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #3498db;
+        text-decoration: none;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+      .nav-links li {
+        margin-left: 1.5rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Room details section styles */
+      .room-details {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
+      .room-gallery {
+        position: relative;
+        height: 400px;
+      }
+      .room-gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .room-gallery-nav {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+      }
+      .room-gallery-nav button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+      }
+      .room-gallery-nav button.active {
+        background-color: #fff;
+      }
+      .room-info {
+        padding: 2rem;
+      }
+      .room-info h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .room-description {
+        margin-bottom: 1rem;
+      }
+      .room-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .feature {
+        display: flex;
+        align-items: center;
+      }
+      .feature img {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5rem;
+      }
+
+      /* Booking widget styles */
+      .booking-widget {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+      }
+      .booking-widget h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .booking-form {
+        display: grid;
+        gap: 1rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-group label {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      .form-group input,
+      .form-group select {
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        font-size: 1rem;
+      }
+      .booking-widget button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1rem;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      .booking-widget button:hover {
+        background-color: #2980b9;
+      }
+
+      /* Amenities section styles */
+      .amenities {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .amenities h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .amenities-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+      .amenity-item {
+        display: flex;
+        align-items: center;
+      }
+      .amenity-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5rem;
+      }
+
+      /* Policies section styles */
+      .policies {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+      }
+      .policies h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .policy-item {
+        margin-bottom: 1rem;
+      }
+      .policy-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .room-gallery {
+          height: 300px;
+        }
+        .room-features {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="/" class="logo"><div>LuxStay</div></a>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/hotel-rooms/">Rooms</a></li>
+          <li><a href="/hotel-amenities/">Amenities</a></li>
+          <li><a href="/contacts/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="room-details">
+        <div class="room-gallery">
+          <img src="../images/family suite room copy.jpg" alt="family suite" />
+          <div class="room-gallery-nav">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
+        </div>
+        <div class="room-info">
+          <h1>Family Suite Room</h1>
+          <p class="room-description">
+            A family suite room in a hotel is a room with multiple bedrooms and
+            bathrooms that can accommodate a family.
+          </p>
+          <div class="room-features">
+            <div class="feature">
+              <img src="../images/room size icon.png" alt="Room Size Icon" />
+              <span>Room size</span>
+            </div>
+            <div class="feature">
+              <img src="../images/twin bed.png" alt="Bed Icon" />
+              <span>Twin Bed</span>
+            </div>
+            <div class="feature">
+              <img src="../images/city view icon.png" alt="View Icon" />
+              <span>City View</span>
+            </div>
+            <div class="feature">
+              <img
+                src="../images/2 adult and 2 child icon.webp"
+                alt="Occupancy Icon"
+              />
+              <span>2 Adults, 2 Child</span>
+            </div>
+          </div>
+          <div class="booking-widget">
+            <h2>Book This Room</h2>
+            <form class="booking-form">
+              <div class="form-group">
+                <label for="check-in">Check-in Date</label>
+                <input type="date" id="check-in" required />
+              </div>
+              <div class="form-group">
+                <label for="check-out">Check-out Date</label>
+                <input type="date" id="check-out" required />
+              </div>
+              <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <select id="guests" required>
+                  <option value="1">1 Adult</option>
+                  <option value="2">2 Adults</option>
+                  <option value="3">2 Adults, 1 Child</option>
+                </select>
+              </div>
+              <button type="submit">Book Now</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="amenities">
+        <h2>Room Amenities</h2>
+        <div class="amenities-list">
+          <div class="amenity-item">
+            <img src="../images/wifi-icon.png" alt="Wi-Fi Icon" />
+            <span>Free High-Speed Wi-Fi</span>
+          </div>
+          <div class="amenity-item">
+            <img src="../images/amenity tv.png" alt="TV Icon" />
+            <span>55" Smart TV</span>
+          </div>
+          <div class="amenity-item">
+            <img
+              src="../images/aircontioner amenity.png"
+              alt="Air Conditioning Icon"
+            />
+            <span>Climate Control</span>
+          </div>
+          <div class="amenity-item">
+            <img src="../images/minibar bar icon.png" alt="Mini Bar Icon" />
+            <span>Mini Bar</span>
+          </div>
+          <div class="amenity-item">
+            <img src="../images/safe-icon.jpg" alt="Safe Icon" />
+            <span>In-room Safe</span>
+          </div>
+          <div class="amenity-item">
+            <img
+              src="../images/bathrobe and slipper icon.png"
+              alt="Bathrobe Icon"
+            />
+            <span>Bathrobes & Slippers</span>
+          </div>
+          <div class="amenity-item">
+            <img
+              src="../images/Nespresso Machine icon.png"
+              alt="Coffee Machine Icon"
+            />
+            <span>Nespresso Machine</span>
+          </div>
+          <div class="amenity-item">
+            <img src="../images/desk icon.png" alt="Work Desk Icon" />
+            <span>Work Desk</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="policies">
+        <h2>Room Policies</h2>
+        <div class="policy-item">
+          <h3>Check-in / Check-out</h3>
+          <p>Check-in time starts at 3 PM. Check-out time is 12 PM.</p>
+        </div>
+        <div class="policy-item">
+          <h3>Cancellation Policy</h3>
+          <p>
+            Free cancellation up to 24 hours before check-in. Cancellations made
+            within 24 hours of check-in are subject to a one-night room charge.
+          </p>
+        </div>
+        <div class="policy-item">
+          <h3>Extra Bed Policy</h3>
+          <p>
+            One extra bed or one crib can be accommodated in this room for an
+            additional charge.
+          </p>
+        </div>
+        <div class="policy-item">
+          <h3>Smoking Policy</h3>
+          <p>This is a non-smoking room. Smoking is strictly prohibited.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 LuxStay. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

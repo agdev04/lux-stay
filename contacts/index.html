@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - LuxStay</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #3498db;
+        text-decoration: none;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+      .nav-links li {
+        margin-left: 1.5rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Hero section styles */
+      .hero {
+        background-image: url(../images/contact-hotel.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 2rem;
+      }
+      .hero-content {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        border-radius: 5px;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      /* Contact section styles */
+      .contact-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .contact-form {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 5px;
+      }
+      .contact-form h2 {
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+      .form-group textarea {
+        height: 150px;
+      }
+      button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+
+      /* Contact info styles */
+      .contact-info {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 5px;
+      }
+      .contact-info h2 {
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .contact-info p {
+        margin-bottom: 1rem;
+      }
+      .contact-info strong {
+        display: inline-block;
+        width: 100px;
+      }
+
+      /* Map styles */
+      .map {
+        margin-top: 2rem;
+      }
+      .map iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .contact-section {
+          grid-template-columns: 1fr;
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="/" class="logo"><div>LuxStay</div></a>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/hotel-destination/">Destinations</a></li>
+          <li><a href="/about-hotels/">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Contact Us</h1>
+          <p>Get in touch with our team for any inquiries or support</p>
+        </div>
+      </section>
+
+      <div class="container">
+        <section class="contact-section">
+          <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> Kapatagan,Digos City,Davao Del Sur</p>
+            <p><strong>Phone:</strong> 09453554034</p>
+            <p><strong>Email:</strong> info@luxstay.com</p>
+            <p><strong>Hours:</strong> Monday - Friday: 9am - 6pm EST</p>
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31692.22293368734!2d125.30581822158204!3d6.827126967047439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f9ae91bc37d687%3A0x24f99d78a94236fc!2sDigos%20City%2C%20Davao%20del%20Sur!5e0!3m2!1sen!2sph!4v1728582113469!5m2!1sen!2sph"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 LuxStay. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

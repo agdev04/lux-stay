@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amenities - Grand Palace Hotel | LuxStay</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #3498db;
+        text-decoration: none;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+      .nav-links li {
+        margin-left: 1.5rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Hero section styles */
+      .hero {
+        background-image: url(../images/hotel-amenites.webp);
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 2rem;
+      }
+      .hero-content {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        border-radius: 5px;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Amenities section styles */
+      .amenities-section {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .amenities-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .amenities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+      .amenity-card {
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .amenity-card:hover {
+        transform: translateY(-5px);
+      }
+      .amenity-card img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+      }
+      .amenity-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .amenity-card p {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      /* Featured amenity styles */
+      .featured-amenity {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+      .featured-amenity-content {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .featured-amenity-image {
+        flex: 1;
+        min-width: 300px;
+      }
+      .featured-amenity-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .featured-amenity-text {
+        flex: 1;
+        min-width: 300px;
+        padding: 2rem;
+      }
+      .featured-amenity-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .featured-amenity-text p {
+        margin-bottom: 1rem;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .featured-amenity-content {
+          flex-direction: column;
+        }
+        .featured-amenity-image,
+        .featured-amenity-text {
+          min-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="/" class="logo"><div>LuxStay</div></a>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="../hotel-rooms/">Rooms</a></li>
+          <li><a href="#">Amenities</a></li>
+          <li><a href="../contacts/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Grand Palace Hotel Amenities</h1>
+          <p>Discover our world-class facilities and services</p>
+        </div>
+      </section>
+
+      <div class="container">
+        <section class="featured-amenity">
+          <div class="featured-amenity-content">
+            <div class="featured-amenity-image">
+              <img src="../images/hotel spa.jpg" alt="Luxury Spa" />
+            </div>
+            <div class="featured-amenity-text">
+              <h2>Luxury Spa & Wellness Center</h2>
+              <p>
+                Indulge in ultimate relaxation at our state-of-the-art spa and
+                wellness center. Our expert therapists offer a wide range of
+                treatments designed to rejuvenate your body and mind.
+              </p>
+              <p>Featuring:</p>
+              <ul>
+                <li>Massage therapy rooms</li>
+                <li>Sauna and steam rooms</li>
+                <li>Hydrotherapy pool</li>
+                <li>Fitness center with personal trainers</li>
+                <li>Yoga and meditation classes</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="amenities-section">
+          <h2>Hotel Amenities</h2>
+          <div class="amenities-grid">
+            <div class="amenity-card">
+              <img
+                src="../images/hotel-swimming-pool.jpg"
+                alt="Swimming Pool"
+              />
+              <h3>Infinity Pool</h3>
+              <p>Enjoy our rooftop infinity pool with panoramic city views</p>
+            </div>
+            <div class="amenity-card">
+              <img src="../images/hotel dining area.jpg" alt="Fine Dining" />
+              <h3>Gourmet Restaurants</h3>
+              <p>Savor exquisite cuisine at our award-winning restaurants</p>
+            </div>
+            <div class="amenity-card">
+              <img
+                src="../images/hotel bussiness area.jpg"
+                alt="Business Center"
+              />
+              <h3>Business Center</h3>
+              <p>Stay productive with our fully-equipped business facilities</p>
+            </div>
+            <div class="amenity-card">
+              <img src="../images/concierge.jpg" />
+              <h3>24/7 Concierge</h3>
+              <p>Our dedicated staff is always available to assist you</p>
+            </div>
+            <div class="amenity-card">
+              <img
+                src="../images/hotel fitness area.jpg"
+                alt="Fitness Center"
+              />
+              <h3>Fitness Center</h3>
+              <p>Stay fit with our modern gym and fitness classes</p>
+            </div>
+            <div class="amenity-card">
+              <img src="../images/room service meal.jpg" alt="Room Service" />
+              <h3>24-Hour Room Service</h3>
+              <p>Enjoy gourmet meals in the comfort of your room</p>
+            </div>
+            <div class="amenity-card">
+              <img
+                src="../images/hotel valet parking.webp"
+                alt="Valet Parking"
+              />
+              <h3>Valet Parking</h3>
+              <p>Convenient and secure parking for your vehicle</p>
+            </div>
+            <div class="amenity-card">
+              <img
+                src="../images/hotel laundry service.jpg"
+                alt="Laundry Service"
+              />
+              <h3>Laundry Service</h3>
+              <p>Professional cleaning and pressing services available</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="featured-amenity">
+          <div class="featured-amenity-content">
+            <div class="featured-amenity-text">
+              <h2>Exclusive Rooftop Lounge</h2>
+              <p>
+                Experience breathtaking views and sophisticated ambiance at our
+                exclusive rooftop lounge. It's the perfect spot to unwind after
+                a long day or celebrate special occasions.
+              </p>
+              <p>Highlights:</p>
+              <ul>
+                <li>Panoramic city views</li>
+                <li>Craft cocktails and premium spirits</li>
+                <li>Gourmet small plates</li>
+                <li>Live music and DJ nights</li>
+                <li>Private event spaces available</li>
+              </ul>
+            </div>
+            <div class="featured-amenity-image">
+              <img
+                src="../images/hotel rooftop lounge.jpg"
+                alt="Rooftop Lounge"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 LuxStay. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
